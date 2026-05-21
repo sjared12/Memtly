@@ -6,7 +6,7 @@ services:
     # Update these to match your fork/repository before creating the app.
     github:
       repo: Memtly/Memtly.Community
-      branch: main
+      branch: master
       deploy_on_push: true
 
     source_dir: /
