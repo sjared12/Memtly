@@ -9,8 +9,8 @@ services:
       branch: main
       deploy_on_push: true
 
-    source_dir: /
-    dockerfile_path: Memtly.Community/Dockerfile
+    build:
+      dockerfile_path: Memtly.Community/Dockerfile
 
     http_port: 8080
     instance_count: 1
