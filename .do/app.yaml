@@ -1,0 +1,44 @@
+name: memtly-community
+region: nyc
+
+services:
+  - name: web
+    # Update these to match your fork/repository before creating the app.
+    github:
+      repo: Memtly/Memtly.Community
+      branch: main
+      deploy_on_push: true
+
+    source_dir: /
+    dockerfile_path: Memtly.Community/Dockerfile
+
+    http_port: 8080
+    instance_count: 1
+    instance_size_slug: basic-xxs
+
+    envs:
+      - key: ASPNETCORE_ENVIRONMENT
+        scope: RUN_AND_BUILD_TIME
+        value: Production
+      - key: PORT
+        scope: RUN_TIME
+        value: "8080"
+
+    routes:
+      - path: /
+
+    health_check:
+      http_path: /
+      initial_delay_seconds: 20
+      period_seconds: 10
+      timeout_seconds: 5
+      success_threshold: 1
+      failure_threshold: 6
+
+    volumes:
+      - name: memtly-config
+        mount_path: /app/config
+        size_gigabytes: 2
+      - name: memtly-uploads
+        mount_path: /app/wwwroot/uploads
+        size_gigabytes: 20

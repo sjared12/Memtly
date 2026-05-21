@@ -26,6 +26,8 @@ Why not give it a try before installing? Take a look at the demo site here - htt
 
 For a setup steps and a full list of configurable options please view the documentation site - https://docs.memtly.com.
 
+For a repository-ready deployment path on DigitalOcean App Platform, see [docs/digitalocean-app-platform.md](docs/digitalocean-app-platform.md).
+
 ## Disclaimer
 
 Warning. This is open-source software (GPL-V3), and while we make a best effort to ensure releases are stable and bug-free, there are no warranties. Use at your own risk.
